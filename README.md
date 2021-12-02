@@ -12,10 +12,26 @@ We will try to generate synthetic images of people using progressive growing GAN
 
 ### Dataset
 We use the following dataset: https://www.kaggle.com/badasstechie/celebahq-resized-256x256 \
-This dataset contains 30.000 images that we will use for training.
+This dataset contains 30.000 images that we will use for training.\
+The way we preprocess data has changed between milestones 
+#### Milestone 1
+Notebook: *DataPreprocessing.ipynb*\
+The kaggle.json (API token for kaggle) has to be copied into *DataPreprocessing.ipynb*
+
+#### Milestone 2
+Notebook: *DataPreprocessing2.ipynb*\
+It uses MTCNN to extract faces from the images. This improves the training process because the network has to learn less features
 
 ### Training environment
 For training our model we will use Azure Machine Learning.
+
+### How to train
+Notebook: *Architecture.ipnyb*
+For training specify the number of growth phase with the *n_blocks* variable (e.g. set to 3 for 16 x 16 images). **DO NOT GO ABOVE 64 x 64!**\
+For each growth specify the batch and epoch numbers with the *n_batch* and *n_epoch* variables.
+
+### How to evaluate
+During training generators along with some generated photos are saved each growth phase. These can be used for evaluation.
 
 ## Team name
 veGANs
