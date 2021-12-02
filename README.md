@@ -20,7 +20,7 @@ Notebook: *DataPreprocessing.ipynb*\
 #### Milestone 2
 Notebook: *DataPreprocessing2.ipynb*\
 It uses MTCNN to extract faces from the images. This improves the training process because the network has to learn less features.
-We took [this](https://machinelearningmastery.com/how-to-implement-progressive-growing-gan-models-in-keras/) article as a basis for the architecture.
+We took [this article](https://machinelearningmastery.com/how-to-implement-progressive-growing-gan-models-in-keras/) as a basis for the architecture.
 
 ### Training environment
 For training our model we use Azure Machine Learning.
