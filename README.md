@@ -19,15 +19,15 @@ The way we preprocess data has changed between milestones.
 For training our model we use Azure Machine Learning.
 
 #### Milestone 1
-Notebook: *DataPreprocessing.ipynb*\
+Notebook: *DataPreprocessing.ipynb*
 
 #### Milestone 2
 Notebook: *DataPreprocessing2.ipynb*\
 It uses MTCNN to extract faces from the images. This improves the training process because the network has to learn less features.
 We took [this article](https://machinelearningmastery.com/how-to-implement-progressive-growing-gan-models-in-keras/) as a basis for the architecture.
 
-### Final
-We trained our model to the size of **256 x 256** on Azure and we achieved good results. Some sample generated images and the plot of the loss function during training can be seen in the *images* folder, the synthetic image generating models can be downloaded from the *models* folder. The network architecture can be viewed in the *network_plot folder*.\
+#### Final
+We trained our model to the size of **256 x 256** on Azure and we achieved good results. Some sample generated images and the plot of the loss function during training can be seen in the *images* folder, the synthetic image generating models can be downloaded from the *models* folder. The network architecture can be viewed in the *network_plot* folder.\
 In the *azure* folder under the *scripts* folder can be seen the scripts we ran on Azure. The *crop.py* script was used to load the images and crop the faces out of them, meanwhile the *train.py* script was used for the training process which resulted the pictures seen in the *images* folder. The *train.ipynb* notebook was used to create the train script and to start the training on Azure. You can start your own training by creating a resource group and workspace on Azure. The *config.yml* file describes the necessary environment for the *train.py* script to run on Azure.
 
 ### How to train
