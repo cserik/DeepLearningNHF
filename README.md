@@ -68,6 +68,8 @@ Download and install the application from *android/facegenerator.apk* to your An
 <img src="/android/screenshots/256x256.png" width="400">
 </p>
 
+Icon made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
+
 ## Team name
 veGANs
 
