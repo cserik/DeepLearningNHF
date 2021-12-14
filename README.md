@@ -34,7 +34,7 @@ For each growth specify the batch and epoch numbers with the *n_batch* and *n_ep
 ### How to evaluate
 During training generators along with some generated photos are saved each growth phase. These can be used for evaluation.
 
-##
+## Android application
 We created an Android application to demonstrate the capabilities of our generator model, where you can set the desired resolution and then generate realistic images of non-existent people.
 
 <p align="center">
