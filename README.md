@@ -8,12 +8,16 @@ Progressive growing GANs use and updated version of the classic GAN training met
 
 ## Our project
 ### Our goal
-We will try to generate synthetic images of people using progressive growing GANs.
+We will try to generate **256 x 256** synthetic images of people using progressive growing GANs.
 
 ### Dataset
 We use the following dataset: https://www.kaggle.com/badasstechie/celebahq-resized-256x256 \
 This dataset contains 30.000 images that we will use for training.\
 The way we preprocess data has changed between milestones. 
+
+### Training environment
+For training our model we use Azure Machine Learning.
+
 #### Milestone 1
 Notebook: *DataPreprocessing.ipynb*\
 
@@ -22,20 +26,29 @@ Notebook: *DataPreprocessing2.ipynb*\
 It uses MTCNN to extract faces from the images. This improves the training process because the network has to learn less features.
 We took [this article](https://machinelearningmastery.com/how-to-implement-progressive-growing-gan-models-in-keras/) as a basis for the architecture.
 
-### Training environment
-For training our model we use Azure Machine Learning.
+### Final
+We trained our model to the size of **256 x 256** on Azure and we achieved good results. Some sample generated images and the plot of the loss function during training can be seen in the *images* folder, the synthetic image generating models can be downloaded from the *models* folder. The network architecture can be viewed in the *network_plot folder*.\
+In the *azure* folder under the *scripts* folder can be seen the scripts we ran on Azure. The *crop.py* script was used to load the images and crop the faces out of them, meanwhile the *train.py* script was used for the training process which resulted the pictures seen in the *images* folder. The *train.ipynb* notebook was used to create the train script and to start the training on Azure. You can start your own training by creating a resource group and workspace on Azure. The *config.yml* file describes the necessary environment for the *train.py* script to run on Azure.
 
 ### How to train
 Notebook: *DataPreprocessing2.ipynb*, *Architecture.ipnyb*\
 The kaggle.json (API token for kaggle) has to be copied into *DataPreprocessing2.ipynb*\.
-For training specify the number of growth phase with the *n_blocks* variable (e.g. set to 3 for 16 x 16 images). **DO NOT GO ABOVE 64 x 64!**\
+For training specify the number of growth phase with the *n_blocks* variable (e.g. set to 3 for 16 x 16 images). **DO NOT GO ABOVE 256 x 256!**\
 For each growth specify the batch and epoch numbers with the *n_batch* and *n_epoch* variables.
 
 ### How to evaluate
 During training generators along with some generated photos are saved each growth phase. These can be used for evaluation.
 
+## Results
+You can evaluate our results by looking the synthetized images
+<p align="center">
+<img src="/images/plot_128x128-tuned.png" width="400">
+<img src="/images/plot_256x256-tuned.png" width="400">
+</p>
+
 ## Android application
-We created an Android application to demonstrate the capabilities of our generator model, where you can set the desired resolution and then generate realistic images of non-existent people.
+We created an Android application to demonstrate the capabilities of our generator model, where you can set the desired resolution and then generate realistic images of non-existent people.\
+Download and install the application from *android/facegenerator.apk* to your Android device!
 
 <p align="center">
 <img src="/android/screenshots/32x32.png" width="400">
