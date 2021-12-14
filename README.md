@@ -31,13 +31,21 @@ We trained our model to the size of **256 x 256** on Azure and we achieved good 
 In the *azure* folder under the *scripts* folder can be seen the scripts we ran on Azure. The *crop.py* script was used to load the images and crop the faces out of them, meanwhile the *train.py* script was used for the training process which resulted the pictures seen in the *images* folder. The *train.ipynb* notebook was used to create the train script and to start the training on Azure. You can start your own training by creating a resource group and workspace on Azure. The *config.yml* file describes the necessary environment for the *train.py* script to run on Azure.
 
 ### How to train
-Notebook: *DataPreprocessing2.ipynb*, *Architecture.ipnyb*\
-The kaggle.json (API token for kaggle) has to be copied into *DataPreprocessing2.ipynb*\.
-For training specify the number of growth phase with the *n_blocks* variable (e.g. set to 3 for 16 x 16 images). **DO NOT GO ABOVE 256 x 256!**\
+For training specify the number of growth phase with the *n_blocks* variable (e.g. set to 3 for 16 x 16 images).
 For each growth specify the batch and epoch numbers with the *n_batch* and *n_epoch* variables.
 
+#### Colab
+Notebook: *Architecture.ipnyb*
+The kaggle.json (API token for kaggle) has to be copied into *Architecture.ipynb*.
+Do not load too many images (you should be fine with around 2000 loaded images) because *Colab* does not have enough memory to handle so many data.
+
+#### Azure
+Notebook: *azure/train.ipnyb*
+Create your own resource group and workspace on Azure then fill the required data in the notebook. After that you can start your own training process on Azure!
+
 ### How to evaluate
-During training generators along with some generated photos are saved each growth phase. These can be used for evaluation.
+During training generators along with some generated photos are saved each growth phase. These can be used for evaluation.\
+Also you can load the models and plot your own images using the *test_model_script.ipynb*.
 
 ## Results
 You can evaluate our results by looking the synthetized images
