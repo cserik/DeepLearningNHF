@@ -77,3 +77,6 @@ veGANs
 Váli Valter\
 Nandrean David Cristian\
 Csató Erik
+
+## Youtube video
+https://www.youtube.com/watch?v=Snfwdh1CHc8
